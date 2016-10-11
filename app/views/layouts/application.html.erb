@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CoderRestaurant</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <%= link_to "HienDinhNgoc", root_path, :class => "brand-logo" %>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="<%= root_path %>"><i class="mdi-action-view-list"></i></a></li>
+        <li><a href="<%= home_about_us_path %>"><i class="mdi-action-perm-identity"></i></a></li>
+        <li><a href="<%= home_contact_us_path %>"><i class="mdi-maps-place"></i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="<%= root_path %>"><i class="mdi-action-view-list"></i></a></li>
+        <li><a href="home_about_us_path"><i class="mdi-action-perm-identity"></i></a></li>
+        <li><a href="<%= home_contact_us_path %>"><i class="mdi-maps-place"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <% flash.each do |key, value| %>
+     <div class="alert <%= key %>"><%= value %></div>
+  <% end %>
+<div class="row">
+	<div class="col m10 offset-m1">
+		<%= yield %>
+	</div>
+</div>
+
+<script>
+	$(".button-collapse").sideNav();
+</script>
+</body>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l3 s12">
+        <h5 class="white-text">CoderRestaurant</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Foods</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Social</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Contact</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © <%= Time.now.year%> Copyright by Dinh Ngoc Hien
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+
+</html>
