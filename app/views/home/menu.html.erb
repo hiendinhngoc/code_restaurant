@@ -1,2 +1,27 @@
-<h1>Home#menu</h1>
-<p>Find me in app/views/home/menu.html.erb</p>
+<h1>Menu</h1>
+
+
+<ul id="dropdown" class="dropdown-content">
+	<li>
+      <% Section.all.each do |section| %>
+        <li class="nav-item" role="presentation">
+            <%= link_to section.name, root_path(section: section.name)%>
+        </li>
+      <% end %>
+    </li>
+</ul>
+<a class="btn dropdown-button" href="#!" data-activates="dropdown">Menu<i class="mdi-navigation-arrow-drop-down right"></i></a>
+
+
+<% @food_items.each do |item| %>
+    <div class="card">
+        <div class="card-block">
+            <%= item.name %>
+        </div>
+
+        <div class="card-block">
+            <%= image_tag item.image_url%>
+        </div>
+    </div>
+
+<% end %>
