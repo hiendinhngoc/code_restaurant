@@ -8,6 +8,7 @@
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <%= link_to "HienDinhNgoc", root_path, :class => "brand-logo" %>
+      <%= link_to "CoderRestaurant", root_path, :class => "brand-logo center" %>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="<%= root_path %>"><i class="mdi-action-view-list"></i></a></li>
@@ -24,7 +25,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="<%= root_path %>"><i class="mdi-action-view-list"></i></a></li>
-        <li><a href="home_about_us_path"><i class="mdi-action-perm-identity"></i></a></li>
+        <li><a href="<%= home_about_us_path %>"><i class="mdi-action-perm-identity"></i></a></li>
         <li><a href="<%= home_contact_us_path %>"><i class="mdi-maps-place"></i></a></li>
       </ul>
     </div>
@@ -33,6 +34,9 @@
      <div class="alert <%= key %>"><%= value %></div>
   <% end %>
 <div class="row">
+  <div class="menu-image">
+    <%= image_tag "cake1.png" %>
+  </div>
 	<div class="col m10 offset-m1">
 		<%= yield %>
 	</div>
